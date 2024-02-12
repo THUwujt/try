@@ -2,7 +2,7 @@
 %先给出解析解的曲线
 h=10^-3;
 t=0:h:20;
-ut=-1.499875*exp(-0.5*t)+0.499875*exp(-2000.5*t)+1;
+ut=-1.499875*exp(-0.5*t)+0.499875*exp(-2000.5*t)+1;%两个方程
 vt=-2.99975*exp(-0.5*t)-0.00025*exp(-2000.5*t)+1;
 f=@(y) [-2000*y(1)+999.75*y(2)+1000.25;y(1)-y(2)];
 figure(1)
@@ -41,6 +41,7 @@ figure(3)
 semilogy(0:h:20,erroru1,"r",0:h:20,errorv1,"b")
 legend("error u","error v","Location","best")
 title("显式方法误差绝对值")
+ylabel("绝对误差")
 
 %隐式方法
 h=0.001;
@@ -77,6 +78,7 @@ figure(5)
 semilogy(0:h:20,erroru2,"r",0:h:20,errorv2,"b")
 legend("error u","error v","Location","best")
 title("隐式方法误差绝对值")
+ylabel("绝对误差")
 
 function p=polyLegendre(n)%生成勒让德多项式
 p=1;
